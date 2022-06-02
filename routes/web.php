@@ -16,3 +16,11 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api/'], function() use($router){
+    $router->get('merks', 'MerkController@index');
+    $router->post('merk', 'MerkController@create');
+    $router->get('merk/{id}', 'MerkController@show');
+    $router->put('merk/{id}', 'MerkController@update');
+    $router->delete('merk/{id}', 'MerkController@destroy');
+});
