@@ -31,8 +31,6 @@ return new class extends Migration
             $table->char('plat', 2);
             $table->enum('fuel', ['Bensin', 'Solar']);
             $table->enum('status', ['Dijual', 'Terjual']);
-            // $table->bigInteger('seller_id');
-            // $table->foreign('seller_id')->references('id')->on('mst_seller');
             $table->timestamps();
         });
     }
