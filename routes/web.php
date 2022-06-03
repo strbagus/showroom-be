@@ -23,4 +23,11 @@ $router->group(['prefix' => 'api/'], function() use($router){
     $router->get('merk/{id}', 'MerkController@show');
     $router->put('merk/{id}', 'MerkController@update');
     $router->delete('merk/{id}', 'MerkController@destroy');
+
+    
+    $router->get('types', 'TypeController@index');
+    $router->post('type', 'TypeController@create');
+    $router->get('type/{id}', 'TypeController@show');
+    $router->put('type/{id}', 'TypeController@update');
+    $router->delete('type/{id}', 'TypeController@destroy');
 });

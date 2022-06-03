@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ref_model', function (Blueprint $table) {
+        Schema::create('ref_type', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->char('model_code', 3)->unique();
+            $table->char('type_code', 3)->unique();
             $table->string('name', 20);
             $table->char('merk_code', 2);
             $table->foreign('merk_code')->references('merk_code')->on('ref_merk');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_model');
+        Schema::dropIfExists('ref_type');
     }
 };

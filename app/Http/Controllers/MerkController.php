@@ -17,25 +17,25 @@ class MerkController extends Controller
         $merk = new Merk();
         $merk->name = $request->name;
         $merk->merk_code = $request->merk_code;
-        $merk->model_code = $request->model_code;
+        $merk->logoname = $request->logoname;
         $merk->save();
         
-        $return response()->json($merk);
+        return response()->json($merk);
     }
     
     public function show($id) {
         $merk = Merk::find($id);
-        return respone()->json($merk);
+        return response()->json($merk);
     }
 
     public function update(Request $request, $id) {
         $merk = new Merk();
         $merk->name = $request->name;
         $merk->merk_code = $request->merk_code;
-        $merk->model_code = $request->model_code;
+        $merk->logoname = $request->logoname;
         $merk->save();
         
-        $return response()->json($merk);
+        return response()->json($merk);
     }
     public function destroy($id) {
         $merk = Merk::find($id);

@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('mst_car', function (Blueprint $table) {
             $table->id();
+            $table->char('car_code', 5)->unique();
             $table->string('name', 35);
             $table->smallInteger('year');
             $table->enum('transmition', ['Manual', 'Matic']);
             $table->smallInteger('mileage');
             $table->char('merk_code', 2);
             $table->foreign('merk_code')->references('merk_code')->on('ref_merk');
-            $table->char('model_code', 3);
-            $table->foreign('model_code')->references('model_code')->on('ref_model');
+            $table->char('type_code', 3);
+            $table->foreign('type_code')->references('type_code')->on('ref_type');
             $table->smallInteger('machine');
             $table->string('color', 20);
             $table->integer('sell_price');

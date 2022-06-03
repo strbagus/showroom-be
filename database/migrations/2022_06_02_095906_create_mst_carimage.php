@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('mst_carimage', function (Blueprint $table) {
             $table->id();
             $table->string('filename', 100);
-            // $table->bigInteger('car_id');
-            // $table->foreign('car_id')->references('id')->on('mst_car');
+            // $table->bigInteger('car_code');
+            // $table->foreign('car_code')->references('car_code')->on('mst_car');
             $table->timestamps();
         });
     }
