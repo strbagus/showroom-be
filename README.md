@@ -15,5 +15,5 @@ Jump to FrontEnd : https://github.com/strbagus/showroom-fe
 ## Tech Stack
 - Laravel-Lumen 9: https://lumen.laravel.com/docs/9.x/
 
-## Requirement
-- PHP 8 : https://windows.php.net/download
+## Add
+- [laravel-cors](https://github.com/fruitcake/laravel-cors)
