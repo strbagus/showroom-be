@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ref_type', function (Blueprint $table) {
+        Schema::create('ref_model', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->char('type_code', 3)->unique();
             $table->string('name', 20);
-            $table->char('merk_code', 2);
-            $table->foreign('merk_code')->references('merk_code')->on('ref_merk');
+            $table->tinyInteger('merk_id')->unsigned();
+            $table->foreign('merk_id')->references('id')->on('ref_merk');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_type');
+        Schema::dropIfExists('ref_model');
     }
 };

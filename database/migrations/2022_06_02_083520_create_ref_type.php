@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mst_carimage', function (Blueprint $table) {
-            $table->id();
-            $table->string('filename', 100);
-            $table->bigInteger('car_id')->unsigned();
-            $table->foreign('car_id')->references('id')->on('mst_car');
+        Schema::create('ref_type', function (Blueprint $table) {
+            $table->tinyIncrements('id');
+            $table->string('name', 20);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mst_carimage');
+        Schema::dropIfExists('ref_type');
     }
 };

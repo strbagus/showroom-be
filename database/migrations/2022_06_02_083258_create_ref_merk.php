@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('ref_merk', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->char('merk_code', 2)->unique();
             $table->string('name', 20);
             $table->string('logoname', 100)->nullable();
             $table->timestamps();

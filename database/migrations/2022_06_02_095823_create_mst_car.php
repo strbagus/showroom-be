@@ -15,19 +15,20 @@ return new class extends Migration
     {
         Schema::create('mst_car', function (Blueprint $table) {
             $table->id();
-            $table->char('car_code', 5)->unique();
             $table->string('name', 35);
             $table->smallInteger('year');
             $table->enum('transmition', ['Manual', 'Matic']);
             $table->smallInteger('mileage');
-            $table->char('merk_code', 2);
-            $table->foreign('merk_code')->references('merk_code')->on('ref_merk');
-            $table->char('type_code', 3);
-            $table->foreign('type_code')->references('type_code')->on('ref_type');
+            $table->tinyInteger('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('ref_type');
+            $table->tinyInteger('merk_id')->unsigned();
+            $table->foreign('merk_id')->references('id')->on('ref_merk');
+            $table->smallInteger('model_id')->unsigned();
+            $table->foreign('model_id')->references('id')->on('ref_model');
             $table->smallInteger('machine');
             $table->string('color', 20);
             $table->integer('sell_price');
-            $table->integer('buy_price');
+            $table->integer('buy_price')->nullable();
             $table->char('plat', 2);
             $table->enum('fuel', ['Bensin', 'Solar']);
             $table->enum('status', ['Dijual', 'Terjual']);
