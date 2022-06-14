@@ -16,8 +16,6 @@ class TypeController extends Controller
     public function create(Request $request) {
         $type = new Type();
         $type->name = $request->name;
-        $type->model_code = $request->model_code;
-        $type->logoname = $request->logoname;
         $type->save();
         
         return response()->json($type);
@@ -31,8 +29,6 @@ class TypeController extends Controller
     public function update(Request $request, $id) {
         $type = new Type();
         $type->name = $request->name;
-        $type->model_code = $request->model_code;
-        $type->logoname = $request->logoname;
         $type->save();
         
         return response()->json($type);

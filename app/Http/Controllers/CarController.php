@@ -15,13 +15,13 @@ class CarController extends Controller
 
     public function create(Request $request) {
         $car = new Car();
-        $car->car_code = $request->car_code;
         $car->name = $request->name;
         $car->year = $request->year;
         $car->transmition = $request->transmition;
         $car->mileage = $request->mileage;
-        $car->merk_code = $request->merk_code;
-        $car->type_code = $request->type_code;
+        $car->type_id = $request->type_id;
+        $car->merk_id = $request->merk_id;
+        $car->model_id = $request->model_id;
         $car->machine = $request->machine;
         $car->color = $request->color;
         $car->sell_price = $request->sell_price;
@@ -41,13 +41,13 @@ class CarController extends Controller
 
     public function update(Request $request, $id) {
         $car = new Car();
-        $car->car_code = $request->car_code;
         $car->name = $request->name;
         $car->year = $request->year;
         $car->transmition = $request->transmition;
         $car->mileage = $request->mileage;
-        $car->merk_code = $request->merk_code;
-        $car->type_code = $request->type_code;
+        $car->type_id = $request->type_id;
+        $car->merk_id = $request->merk_id;
+        $car->model_id = $request->model_id;
         $car->machine = $request->machine;
         $car->color = $request->color;
         $car->sell_price = $request->sell_price;

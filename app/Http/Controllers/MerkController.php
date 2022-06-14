@@ -16,7 +16,6 @@ class MerkController extends Controller
     public function create(Request $request) {
         $merk = new Merk();
         $merk->name = $request->name;
-        $merk->merk_code = $request->merk_code;
         $merk->logoname = $request->logoname;
         $merk->save();
         
@@ -31,7 +30,6 @@ class MerkController extends Controller
     public function update(Request $request, $id) {
         $merk = new Merk();
         $merk->name = $request->name;
-        $merk->merk_code = $request->merk_code;
         $merk->logoname = $request->logoname;
         $merk->save();
         

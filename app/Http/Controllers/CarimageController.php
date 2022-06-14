@@ -16,7 +16,7 @@ class CarimageController extends Controller
     public function create(Request $request) {
         $carimage = new Carimage();
         $carimage->filename = $request->filename;
-        $carimage->car_code = $request->car_code;
+        $carimage->car_id = $request->car_id;
         $carimage->save();
         
         return response()->json($carimage);
@@ -30,7 +30,7 @@ class CarimageController extends Controller
     public function update(Request $request, $id) {
         $carimage = new Carimage();
         $carimage->filename = $request->filename;
-        $carimage->car_code = $request->car_code;
+        $carimage->car_id = $request->car_id;
         $carimage->save();
         
         return response()->json($carimage);
